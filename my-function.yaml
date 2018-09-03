@@ -1,0 +1,16 @@
+apiVersion: kfn.dajac.io/v1alpha1
+kind: Function
+metadata:
+    name: my-function
+spec:
+    replicas: 1
+    image: dajac/kfn-my-function:0.1.0
+    class: MyFunction
+    
+    input: kfn.source
+    inputKeyDeserializer: bytes
+    inputValueDeserializer: bytes
+    
+    output: kfn.destination
+    outputKeySerializer: bytes
+    outputValueSerializer: bytes
